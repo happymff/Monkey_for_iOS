@@ -27,8 +27,10 @@ $ macaca doctor
 
 
 # 3、执行iosMonkey
+开一个窗口
 $ macaca server --verbose
 
+在新窗口执行
 $ java -jar [iosMonkey.jar Path] -u [设备的UDID] -b [测试App的BundleID]
 
 # 4、修改源码重新打包
