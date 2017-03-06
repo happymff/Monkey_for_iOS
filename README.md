@@ -37,7 +37,7 @@ $ java -jar [iosMonkey.jar Path] -u [设备的UDID] -b [测试App的BundleID]
 
 $ mvn assembly:assembly
 
-最后提示标示成功，可以使用最新的包
+最后提示如下，标示打包成功，target下生成iosMonkey-1.0-SNAPSHOT.jar，可以使用最新的包
 ```
 INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
