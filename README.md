@@ -1,5 +1,12 @@
 # iosMonkey
 
+# 0、简介
+1.可以模拟android monkey执行的方式，在页面点击 滑动操作
+
+2.计划保存截图
+
+3.计划多台ios一起执行
+
 # 1、准备macaca环境
 
 ##安装usbmuxd
