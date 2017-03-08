@@ -14,10 +14,10 @@ public class Monkey {
     //idevicecrashreport -u ecab65eca01ae1d42874c26e645a33aee78296b6 -e -k /Users/hujiachun/Downloads/carshlog
 
     private MacacaClient driver;
-    private int width, height, submitX_mim, submitX_max, submitY_mim, submitY_max, contentX_mim, contentX_max, contentY_mim, contentY_max;
+    private int width, height, submitX_mim, submitX_max, submitY_mim, submitY_max, contentX_mim, contentX_max, contentY_mim, contentY_max, special_point_x, special_point_y;
     private static boolean needhelp = false;
-    private static String UDID, BUNDLEID, REPORT;
-    private static float iphone6X = 32, iphone6Y = 32;
+    private static String UDID, BUNDLEID, PORT, PROXYPORT;
+    private static float iphone6X = 25, iphone6Y = 40;
     private float backX, backY;
 
 
@@ -35,11 +35,17 @@ public class Monkey {
                 UDID = args[++optSetting];
             } else if ("-b".equals(args[optSetting])) {
                 BUNDLEID = args[++optSetting];
+            } else if ("-port".equals(args[optSetting])) {
+            	PORT = args[++optSetting];
+            } else if ("-proxyport".equals(args[optSetting])) {
+            	PROXYPORT = args[++optSetting];
             } else if ("-h".equals(args[optSetting])) {
                 needhelp = true;
                 System.out.println(
                         "-u:设备的UDID\n" +
-                                "-b:测试App的BundleID");
+                        "-b:测试App的Bundle\n"+
+                        "-port:macaca服务的端口，默认3456\n" +
+                        "-proxyport:usb代理端口，默认8900");
                 break;
             }
 
@@ -74,33 +80,46 @@ public class Monkey {
         contentX_mim = width / 10;
         contentY_max = height / 2 + height / 10;
         contentY_mim = height / 2 - height / 10;
+        special_point_x = width / 2;
+        special_point_y = (int) (height * 0.92);
 
 
         while (true) {
 
             switch (new MathRandom().PercentageRandom()) {
                 case 0: {
+                	System.out.println("-----0-----");
                     new MonkeyTapEvent(driver, width, height).injectEvent();
                     break;
                 }
                 case 1: {
+                	System.out.println("-----1-----");
                     new MonkeySwipeEvent(driver, width, height).injectEvent();
                     break;
                 }
                 case 2: {
+                	System.out.println("-----2-----");
                     new MonkeyLaunchEvent(UDID, BUNDLEID).injectEvent();
                     break;
                 }
                 case 3: {
+                	System.out.println("-----3-----");
                     new MonkeyBackEvent(driver, backX, backY).injectEvent();
                     break;
                 }
                 case 4: {
+                	System.out.println("-----4-----");
                     new MonkeySubmitEvent(driver, submitX_mim, submitX_max, submitY_mim, submitY_max).injectEvent();
                     break;
                 }
                 case 5: {
+                	System.out.println("-----5-----");
                     new MonkeyContentEvent(driver, contentX_mim, contentX_max, contentY_mim, contentY_max).injectEvent();
+                    break;
+                }
+                case 6: {
+                	System.out.println("---6--specialpoint-----");
+                    new MonkeyTapSpecialPointEvent(driver, special_point_x, special_point_y).injectEvent();
                     break;
                 }
             }
@@ -117,8 +136,11 @@ public class Monkey {
         porps.put("bundleId", BUNDLEID);
         porps.put("udid", UDID);
         porps.put("autoAcceptAlerts", true);
+        porps.put("proxyPort", Integer.parseInt(PROXYPORT));
         JSONObject desiredCapabilities = new JSONObject();
         desiredCapabilities.put("desiredCapabilities", porps);
+        desiredCapabilities.put("host", "127.0.0.1");
+        desiredCapabilities.put("port", Integer.parseInt(PORT));
         try {
             driver.initDriver(desiredCapabilities);
 
