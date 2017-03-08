@@ -22,7 +22,11 @@ public class MathRandom {
 
     public static double EVENT_TYPE_SUBMIT = 0.10;
 
-    public static double EVENT_TYPE_CONTENT = 0.30;
+    public static double EVENT_TYPE_CONTENT = 0.20;
+    
+    public static double EVENT_TYPE_SPECIAL_POINT = 0.10;
+    
+    public static final int  EVENT_COUNT = 7; 
 
 
 
@@ -46,6 +50,10 @@ public class MathRandom {
                 && randomNumber <= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE + EVENT_TYPE_LAUNCH + EVENT_TYPE_BACK + EVENT_TYPE_SUBMIT
                 + EVENT_TYPE_CONTENT) {
             return 5;
+        }else if (randomNumber >= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE + EVENT_TYPE_LAUNCH + EVENT_TYPE_BACK + EVENT_TYPE_SUBMIT + EVENT_TYPE_CONTENT
+                && randomNumber <= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE + EVENT_TYPE_LAUNCH + EVENT_TYPE_BACK + EVENT_TYPE_SUBMIT
+                + EVENT_TYPE_CONTENT + EVENT_TYPE_SPECIAL_POINT) {
+            return 6;
         }
         return -1;
     }
