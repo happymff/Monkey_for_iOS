@@ -11,7 +11,7 @@
 - 4.如果不修改直接使用，直接使用target下面的jar包，如果实现自己的方法，需要重新编译
 
 # 1、功能
-- 1.可以模拟android monkey执行的方式，在IOS APP页面点击 滑动操等作
+- 1.可以模拟android monkey执行的方式，在IOS APP页面点击 滑动操等作,支持 ios 9和ios10
 
 - 2.支持多台ios一起执行
 
