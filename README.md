@@ -26,18 +26,22 @@ ideviceinstaller需要自己编译，证实直接安装的不能用
 https://github.com/libimobiledevice/libimobiledevice
 
 下载到本地
+
 Before building, try setting:
 
+```
 LD_LIBRARY_PATH=/usr/local/opt/openssl/lib:"${LD_LIBRARY_PATH}"
 CPATH=/usr/local/opt/openssl/include:"${CPATH}"
 PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig:"${PKG_CONFIG_PATH}"
 export LD_LIBRARY_PATH CPATH PKG_CONFIG_PATH
 You might want to add that to your .bash_profile.
+```
 
 CPATH and PKG_CONFIG_PATH are for compiling. LD_LIBRARY_PATH is for runtime. See also https://gist.github.com/samrocketman/70dff6ebb18004fc37dc5e33c259a0fc
 
 
 Then to compile run:
+
 	./autogen.sh
 	make
 	sudo make install
