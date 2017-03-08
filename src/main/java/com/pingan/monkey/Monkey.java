@@ -17,8 +17,7 @@ public class Monkey {
     private int width, height, submitX_mim, submitX_max, submitY_mim, submitY_max, contentX_mim, contentX_max, contentY_mim, contentY_max, special_point_x, special_point_y;
     private static boolean needhelp = false;
     private static String UDID, BUNDLEID, PORT, PROXYPORT;
-    private static float iphone6X = 25, iphone6Y = 40;
-    private float backX, backY;
+    private static int backX = 25, backY = 40;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -68,8 +67,6 @@ public class Monkey {
         height = (Integer) driver.getWindowSize().get("height");
         NumberFormat numberFormat = NumberFormat.getInstance();
         numberFormat.setMaximumFractionDigits(2);
-        backX = iphone6X / width * width;
-        backY = iphone6Y / height * height;
 
         submitX_max = width - 1;
         submitX_mim = width / 10;
