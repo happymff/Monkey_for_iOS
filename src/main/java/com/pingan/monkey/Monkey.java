@@ -88,37 +88,30 @@ public class Monkey {
 
             switch (new MathRandom().PercentageRandom()) {
                 case 0: {
-                	System.out.println("-----0-----");
                     new MonkeyTapEvent(driver, width, height).injectEvent();
                     break;
                 }
                 case 1: {
-                	System.out.println("-----1-----");
                     new MonkeySwipeEvent(driver, width, height).injectEvent();
                     break;
                 }
                 case 2: {
-                	System.out.println("-----2-----");
                     new MonkeyLaunchEvent(UDID, BUNDLEID).injectEvent();
                     break;
                 }
                 case 3: {
-                	System.out.println("-----3-----");
                     new MonkeyBackEvent(driver, backX, backY).injectEvent();
                     break;
                 }
                 case 4: {
-                	System.out.println("-----4-----");
                     new MonkeySubmitEvent(driver, submitX_mim, submitX_max, submitY_mim, submitY_max).injectEvent();
                     break;
                 }
                 case 5: {
-                	System.out.println("-----5-----");
                     new MonkeyContentEvent(driver, contentX_mim, contentX_max, contentY_mim, contentY_max).injectEvent();
                     break;
                 }
                 case 6: {
-                	System.out.println("---6--specialpoint-----");
                     new MonkeyTapSpecialPointEvent(driver, special_point_x, special_point_y).injectEvent();
                     break;
                 }
