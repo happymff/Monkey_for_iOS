@@ -7,13 +7,13 @@ import macaca.client.MacacaClient;
  * Created by hujiachun on 16/12/23.
  */
 public class MonkeyBackEvent extends MonkeyEvent {
-    private float backX, backY;
+    private int backX, backY;
     private MacacaClient driver;
 
-    public MonkeyBackEvent(MacacaClient driver, float backX, float backY) {
+    public MonkeyBackEvent(MacacaClient driver, int width, int height) {
         super(MonkeyEvent.EVENT_TYPE_BACK);
-        this.backX = backX;
-        this.backY = backY;
+        this.backX = width;
+        this.backY = height;
         this.driver = driver;
 
     }
