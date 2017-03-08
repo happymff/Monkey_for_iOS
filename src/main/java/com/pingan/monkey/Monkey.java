@@ -81,7 +81,7 @@ public class Monkey {
         contentY_max = height / 2 + height / 10;
         contentY_mim = height / 2 - height / 10;
         special_point_x = width / 2;
-        special_point_y = (int) (height * 0.92);
+        special_point_y = (int) (height * 0.94);
 
 
         while (true) {
