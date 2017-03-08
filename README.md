@@ -49,16 +49,25 @@ https://github.com/baozhida/MacacaAutomation
 
 操作项目重签名
 
-# 3、执行iosMonkey
+# 帮助命令
+如果需要多个iOS设备一起执行，需要指定 proxyport ，同时macaca使用不同的端口
+```
+$ java -jar iosMonkey-1.0.jar -h
+-u:设备的UDID
+-b:测试App的Bundle
+-port:macaca服务的端口，默认3456
+-proxyport:usb代理端口，默认8900
+```
+
+# 4、执行iosMonkey
 开一个窗口执行
 
 $ macaca server --verbose
 
 在一个新窗口执行
 
-$ java -jar [iosMonkey.jar Path] -u [设备的UDID] -b [测试App的BundleID]
-
-# 4、修改源码重新打包方法
+$ java -jar [iosMonkey.jar Path] -u [设备的UDID] -b [测试App的BundleID] -port [macaca服务端口,可选] -proxyport[usb代理端口,可选]
+# 5、修改源码重新打包方法
 
 如果需要源码实现自定义的功能，在项目目录下执行
 
