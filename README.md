@@ -20,7 +20,7 @@
 - 4.计划自动收集crash日志（未完成）
 
 
-# 1、准备macaca环境
+# 2、准备macaca环境
 
 ##安装usbmuxd
 $ brew install usbmuxd
@@ -81,14 +81,14 @@ MAC全局安装的路径分别如下：
 ##检测macaca环境，无报错
 $ macaca doctor
 
-# 2、WebDriverAgent项目重签名
+# 3、WebDriverAgent项目重签名
 按照项目
 
 https://github.com/baozhida/MacacaAutomation
 
 操作项目重签名
 
-# 帮助命令
+# 4、帮助命令
 如果需要多个iOS设备一起执行，需要指定 proxyport ，同时macaca使用不同的端口
 ```
 $ java -jar iosMonkey-1.0.jar -h
@@ -98,7 +98,7 @@ $ java -jar iosMonkey-1.0.jar -h
 -proxyport:usb代理端口，默认8900
 ```
 
-# 4、执行iosMonkey
+# 5、执行iosMonkey
 开一个窗口执行
 
 $ macaca server --verbose
@@ -106,13 +106,13 @@ $ macaca server --verbose
 在一个新窗口执行
 
 $ java -jar [iosMonkey.jar Path] -u [设备的UDID] -b [测试App的BundleID] -port [macaca服务端口,可选] -proxyport[usb代理端口,可选]
-# 5、修改源码重新打包方法
+# 6、修改源码重新打包方法
 
 如果需要源码实现自定义的功能，在项目目录下执行
 
 $ mvn assembly:assembly
 
-最后提示如下，标示打包成功，target下生成iosMonkey-1.0-SNAPSHOT.jar，可以使用最新的包
+最后提示如下，标示打包成功，target下生成iosMonkey-1.0.jar，可以使用最新的包
 ```
 INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
