@@ -16,8 +16,10 @@ public class Monkey {
     private MacacaClient driver;
     private int width, height, submitX_mim, submitX_max, submitY_mim, submitY_max, contentX_mim, contentX_max, contentY_mim, contentY_max, special_point_x, special_point_y;
     private static boolean needhelp = false;
-    private static String UDID, BUNDLEID, PORT, PROXYPORT;
-    private static int backX = 25, backY = 40;
+    private static String UDID, BUNDLEID;
+    private static String PORT = "3456";
+    private static String PROXYPORT = "8900";
+    private int backX = 25, backY = 40;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -55,7 +57,8 @@ public class Monkey {
                 org.testng.Assert.assertTrue((!UDID.equals(null)) && (!BUNDLEID.equals(null)));
                 new Monkey().run();
             } catch (Exception e) {
-                System.out.println("请确认参数配置,需要帮助请输入 java -jar iosMonkey.jar -h");
+                System.out.println("请确认参数配置,需要帮助请输入 java -jar iosMonkey.jar -h\n"
+                		+ "ERROR信息"+ e.toString());
             }
         }
     }
