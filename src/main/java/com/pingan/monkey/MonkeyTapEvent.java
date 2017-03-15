@@ -23,11 +23,12 @@ public class MonkeyTapEvent extends MonkeyEvent{
     public int injectEvent() throws Exception {
         double x = Math.ceil(Math.random() * (width - 1));
         double y = Math.ceil(Math.random() * (height - 1));
-        System.out.println("sending Event : Tap->(" + x + ", " + y + ")");
+        System.out.println("sending Tap Event : Tap->(" + x + ", " + y + ")");
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("x", x);
         jSONObject.put("y", y);
         driver.touch("tap", jSONObject);
+        //driver.touchAsync("tap", jSONObject);
         return MonkeyEvent.INJECT_SUCCESS;
     }
 }

@@ -23,14 +23,15 @@ public class MonkeySwipeEvent extends MonkeyEvent {
         double startX = Math.ceil(Math.random() * (width - 1));
         double startY = Math.ceil(Math.random() * (height - 1));
         double endY = Math.ceil(Math.random() * (height - 1));
-        System.out.println("sending Event : Swipe-> [start(" + startX + "," + startY + "), end(" + startX + "," + endY+")]");
+        System.out.println("sending Swipe Event : Swipe-> [start(" + startX + "," + startY + "), end(" + startX + "," + endY+")]");
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("fromX", startX);
         jSONObject.put("fromY", startY);
         jSONObject.put("toX", startX);
         jSONObject.put("toY", endY);
         jSONObject.put("steps", 200);
-        driver.touch("drag", jSONObject);
+        driver.touch("tap", jSONObject);
+        //driver.touchAsync("tap", jSONObject);
         return MonkeyEvent.INJECT_SUCCESS;
     }
 }

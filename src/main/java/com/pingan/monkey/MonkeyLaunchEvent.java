@@ -19,13 +19,12 @@ public class MonkeyLaunchEvent extends MonkeyEvent {
 
     public int injectEvent() throws Exception {
 
-        Thread.sleep(500);
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    Thread.sleep(2500);
+                    Thread.sleep(2000);
                     Shell.exec("pkill idevicedebug");
-                    System.out.println("idevicedebug done");
+                    System.out.println("idevicedebug stop");
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {

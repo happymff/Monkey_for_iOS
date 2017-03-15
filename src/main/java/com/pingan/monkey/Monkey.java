@@ -20,6 +20,7 @@ public class Monkey {
     private static String PORT = "3456";
     private static String PROXYPORT = "8900";
     private int backX = 25, backY = 40;
+    private int eventcount = 0;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -89,30 +90,44 @@ public class Monkey {
             switch (new MathRandom().PercentageRandom()) {
                 case 0: {
                     new MonkeyTapEvent(driver, width, height).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 1: {
                     new MonkeySwipeEvent(driver, width, height).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 2: {
                     new MonkeyLaunchEvent(UDID, BUNDLEID).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 3: {
                     new MonkeyBackEvent(driver, backX, backY).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 4: {
                     new MonkeySubmitEvent(driver, submitX_mim, submitX_max, submitY_mim, submitY_max).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 5: {
                     new MonkeyContentEvent(driver, contentX_mim, contentX_max, contentY_mim, contentY_max).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
                 case 6: {
                     new MonkeyTapSpecialPointEvent(driver, special_point_x, special_point_y).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
             }

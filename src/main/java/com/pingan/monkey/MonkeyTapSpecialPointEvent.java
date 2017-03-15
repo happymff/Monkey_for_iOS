@@ -26,6 +26,7 @@ public class MonkeyTapSpecialPointEvent extends MonkeyEvent{
         jSONObject.put("x", this.width);
         jSONObject.put("y", this.height);
         driver.touch("tap", jSONObject);
+        //driver.touchAsync("tap", jSONObject);
         return MonkeyEvent.INJECT_SUCCESS;
     }
 }

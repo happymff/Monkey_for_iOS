@@ -24,6 +24,7 @@ public class MonkeyBackEvent extends MonkeyEvent {
         jSONObject.put("x", backX);
         jSONObject.put("y", backY);
         driver.touch("tap", jSONObject);
+        //driver.touchAsync("tap", jSONObject);
         return MonkeyEvent.INJECT_SUCCESS;
     }
 }
