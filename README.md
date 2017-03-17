@@ -82,7 +82,7 @@ Then to compile run:
 ### 安装carthage
 $ brew install carthage
 
-###安装macaca套件 包括，macaca-cli macaca-ios
+### 安装macaca套件 包括，macaca-cli macaca-ios
 
 ```
 npm install macaca-cli -g
