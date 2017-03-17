@@ -37,19 +37,19 @@ iPhone 7 10.2，每分钟可执行大约60次事件；
 
 # 2、准备macaca环境
 
-##安装usbmuxd
+## 安装usbmuxd
 
 $ brew install usbmuxd
 
-##安装ios_webkit_debug_proxy
+## 安装ios_webkit_debug_proxy
 
 $ brew install ios_webkit_debug_proxy
 
-##安装ios-deploy
+## 安装ios-deploy
 
 $ brew install ios-deploy
 
-##安装ideviceinstaller
+## 编译ideviceinstaller
 
 ~~$ brew install ideviceinstaller~~
 
