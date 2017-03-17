@@ -37,19 +37,19 @@ iPhone 7 10.2，每分钟可执行大约60次事件；
 
 # 2、准备macaca环境
 
-## 安装usbmuxd
+### 安装usbmuxd
 
 $ brew install usbmuxd
 
-## 安装ios_webkit_debug_proxy
+### 安装ios_webkit_debug_proxy
 
 $ brew install ios_webkit_debug_proxy
 
-## 安装ios-deploy
+### 安装ios-deploy
 
 $ brew install ios-deploy
 
-## 编译ideviceinstaller
+### 编译ideviceinstaller
 
 ~~$ brew install ideviceinstaller~~
 
@@ -79,10 +79,10 @@ Then to compile run:
 	sudo make install
 
 
-##安装carthage
+### 安装carthage
 $ brew install carthage
 
-##安装macacajs包括，macaca-cli macaca-ios
+###安装macaca套件 包括，macaca-cli macaca-ios
 
 ```
 npm install macaca-cli -g
@@ -97,7 +97,7 @@ MAC全局安装的路径分别如下：
 /usr/local/lib/node_modules/macaca-ios
 ```
 
-##检测macaca环境，无报错
+### 检测macaca环境，无报错
 $ macaca doctor
 
 # 3、WebDriverAgent项目重签名
