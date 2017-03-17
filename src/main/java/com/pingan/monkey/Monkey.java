@@ -1,6 +1,8 @@
 package com.pingan.monkey;
 
 import com.alibaba.fastjson.JSONObject;
+import com.pingan.monkey.util.Shell;
+
 import macaca.client.MacacaClient;
 
 import java.io.IOException;
@@ -101,30 +103,24 @@ public class Monkey {
                     break;
                 }
                 case 2: {
-                    new MonkeyLaunchEvent(UDID, BUNDLEID).injectEvent();
-                    eventcount = eventcount+1;
-                    System.out.println("---EVENT执行了："+eventcount+"次---");
-                    break;
-                }
-                case 3: {
                     new MonkeyBackEvent(driver, backX, backY).injectEvent();
                     eventcount = eventcount+1;
                     System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
-                case 4: {
+                case 3: {
                     new MonkeySubmitEvent(driver, submitX_mim, submitX_max, submitY_mim, submitY_max).injectEvent();
                     eventcount = eventcount+1;
                     System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
-                case 5: {
+                case 4: {
                     new MonkeyContentEvent(driver, contentX_mim, contentX_max, contentY_mim, contentY_max).injectEvent();
                     eventcount = eventcount+1;
                     System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
-                case 6: {
+                case 5: {
                     new MonkeyTapSpecialPointEvent(driver, special_point_x, special_point_y).injectEvent();
                     eventcount = eventcount+1;
                     System.out.println("---EVENT执行了："+eventcount+"次---");
@@ -136,7 +132,7 @@ public class Monkey {
     }
 
 
-    private void init() {
+    private void init() throws IOException, InterruptedException {
         driver = new MacacaClient();
         JSONObject porps = new JSONObject();
         porps.put("platformName", "ios");
@@ -157,5 +153,7 @@ public class Monkey {
                     "请在命令行输入 macaca server --verbose 启动服务\n\n\n" +
                     "*******************************************\n");
         }
+        //启动app守护进程
+        Shell.launchAPP(UDID,BUNDLEID);
     }
 }

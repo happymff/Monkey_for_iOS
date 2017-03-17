@@ -37,7 +37,7 @@ public class MonkeyLaunchEvent extends MonkeyEvent {
 //            public void run() {
                 try {
                     Shell.exec("idevicedebug -u " + UDID + " run " + BUNDLEID);
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
