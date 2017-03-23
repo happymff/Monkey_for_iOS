@@ -53,7 +53,7 @@ $ brew install ios-deploy
 
 $ brew install ideviceinstaller
 
-### 编译ideviceinstaller
+### 编译libimobiledevice
 
 libimobiledevice需要自己编译，证实直接安装的不能用
 
