@@ -49,11 +49,13 @@ $ brew install ios_webkit_debug_proxy
 
 $ brew install ios-deploy
 
+### 安装ideviceinstaller
+
+$ brew install ideviceinstaller
+
 ### 编译ideviceinstaller
 
-~~$ brew install ideviceinstaller~~
-
-ideviceinstaller需要自己编译，证实直接安装的不能用
+libimobiledevice需要自己编译，证实直接安装的不能用
 
 https://github.com/libimobiledevice/libimobiledevice
 
