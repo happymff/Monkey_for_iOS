@@ -11,6 +11,7 @@ public abstract class MonkeyEvent {
     public static final int EVENT_TYPE_BACK = 3;
     public static final int EVENT_TYPE_SUBMIT = 4;
     public static final int EVENT_TYPE_CONTENT = 5;
+    public static final int EVENT_TYPE_HOMEKEY = 6;
 
     public static final int INJECT_SUCCESS = 1;
     public static final int INJECT_FAIL = 0;

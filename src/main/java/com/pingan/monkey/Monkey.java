@@ -126,6 +126,12 @@ public class Monkey {
                     System.out.println("---EVENT执行了："+eventcount+"次---");
                     break;
                 }
+                case 6: {
+                    new MonkeyHomeKeyEvent(driver,UDID,BUNDLEID).injectEvent();
+                    eventcount = eventcount+1;
+                    System.out.println("---EVENT执行了："+eventcount+"次---");
+                    break;
+                }
             }
 
         }

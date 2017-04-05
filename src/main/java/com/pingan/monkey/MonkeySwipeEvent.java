@@ -29,7 +29,7 @@ public class MonkeySwipeEvent extends MonkeyEvent {
         jSONObject.put("fromY", startY);
         jSONObject.put("toX", startX);
         jSONObject.put("toY", endY);
-        jSONObject.put("steps", 200);
+        jSONObject.put("duration", 1);
         driver.touch("tap", jSONObject);
         //driver.touchAsync("tap", jSONObject);
         return MonkeyEvent.INJECT_SUCCESS;
