@@ -28,7 +28,11 @@ public class Shell {
 	                while ((line = bufferedReader.readLine()) != null) {
 	                    if(line.contains("HW kbd: currently")){
 	                    	//System.out.println("=============="+line);
-	                    	curbundleid = line.split(" ")[9];
+	                    	if(line.split(" ")[8].equals("currently")){
+	                    		curbundleid = line.split(" ")[9];
+	                    	}else{
+	                    		curbundleid = line.split(" ")[10];
+	                    	}
 	                    	//System.out.println("=============="+curbundleid);
 	                    	
 	                    	if(!curbundleid.equals("com.tuniu.app")){
