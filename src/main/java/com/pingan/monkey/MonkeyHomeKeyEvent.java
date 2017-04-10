@@ -24,11 +24,9 @@ public class MonkeyHomeKeyEvent extends MonkeyEvent{
     public int injectEvent() throws Exception {
     	System.out.println("sending HOMEKEY Event.");
     	driver.keys("\uE105");
-    	Thread.sleep(3000);
     	new Thread(new Runnable() {
             public void run() {
                 try {
-                    Thread.sleep(2000);
                     Shell.exec("pkill idevicedebug");
                     System.out.println("idevicedebug stop");
                 } catch (IOException e) {
