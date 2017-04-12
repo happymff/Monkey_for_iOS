@@ -53,7 +53,7 @@ $ brew install ios_webkit_debug_proxy
 
 ### 安装ios-deploy
 
-$ brew install ios-deploy
+$ npm i ios-deploy -g
 
 ### 安装ideviceinstaller
 
