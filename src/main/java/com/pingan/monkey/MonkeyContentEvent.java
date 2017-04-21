@@ -9,6 +9,7 @@ import java.util.Random;
  * Created by hujiachun on 16/12/23.
  */
 public class MonkeyContentEvent extends MonkeyEvent{
+
     private MacacaClient driver;
     private int contentX_min, contentX_max, contentY_mim, contentY_max;
 
