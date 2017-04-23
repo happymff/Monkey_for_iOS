@@ -33,7 +33,7 @@ public class MathRandom {
         randomNumber = Math.random();
         if (randomNumber >= 0 && randomNumber <= EVENT_TYPE_TAP) {
             return 0;
-        } else if (randomNumber >= EVENT_TYPE_TAP / 100 && randomNumber <= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE) {
+        } else if (randomNumber >= EVENT_TYPE_TAP && randomNumber <= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE) {
             return 1;
         } else if (randomNumber >= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE
                 && randomNumber <= EVENT_TYPE_TAP + EVENT_TYPE_SWIPE + EVENT_TYPE_BACK) {
