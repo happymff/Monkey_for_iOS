@@ -89,8 +89,10 @@ public class Monkey {
 
         while (true) {
             if(eventcount>=20000){
+                System.out.println("执行完毕，请重新启动再次运行~~~~");
                 break;
             }
+            Thread.sleep(100);
             switch (new MathRandom().PercentageRandom()) {
                 case 0: {
                     new MonkeyTapEvent(driver, width, height).injectEvent();
