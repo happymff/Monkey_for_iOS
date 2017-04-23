@@ -88,7 +88,9 @@ public class Monkey {
 
 
         while (true) {
-
+            if(eventcount>=20000){
+                break;
+            }
             switch (new MathRandom().PercentageRandom()) {
                 case 0: {
                     new MonkeyTapEvent(driver, width, height).injectEvent();

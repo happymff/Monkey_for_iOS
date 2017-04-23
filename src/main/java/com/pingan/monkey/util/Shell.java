@@ -35,7 +35,7 @@ public class Shell {
 	                    	}
 	                    	//System.out.println("=============="+curbundleid);
 	                    	
-	                    	if(!curbundleid.equals("com.tuniu.app")){
+	                    	if(!curbundleid.equals("com.etiantian.ettaixuepai")){
 	                     		System.out.println("==当前启动的APP bundleid是<"+curbundleid+">,非测试APP，重新呼起测试APP====");
 	                     		Runtime.getRuntime().exec("/usr/local/bin/idevicedebug -u " + UDID + " run " + BUNDLEID);
 	                     	}
@@ -75,6 +75,6 @@ public class Shell {
     
     
     public static void main(String[] args) throws IOException, Exception {
-		launchAPP("f593db43a8469b44cb54745b2b5c85915bc9d701","com.tuniu.app");
+		launchAPP("bfb13a751d799eb97d37dce5e398fe16c5c3fd44","com.etiantian.ettaixuepai");
 	}
 }
